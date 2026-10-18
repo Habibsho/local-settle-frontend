@@ -501,8 +501,7 @@ function TradeDashboardInner() {
                                                 <span className="text-[#9BABB7] font-bold text-sm">USD</span>
                                             </div>
                                         </div>
-<<<<<<< HEAD
-                                        <button
+<button
                                             type="button"
                                             aria-pressed={compareIds.includes(offer.offerId)}
                                             onClick={() => setCompareIds((ids) => ids.includes(offer.offerId)
@@ -512,9 +511,7 @@ function TradeDashboardInner() {
                                         >
                                             {compareIds.includes(offer.offerId) ? "Remove from comparison" : "Compare offer"}
                                         </button>
-                                        <button
-=======
-{currentUser?.userId === offer.creatorId && (
+                                        {currentUser?.userId === offer.creatorId && (
                                             <span className="mb-2 rounded-full border border-[#55D6BE]/40 px-3 py-1 text-xs text-[#55D6BE]">Your offer</span>
                                         )}
                                         {inactiveOfferReason(offer) ? (
@@ -522,7 +519,6 @@ function TradeDashboardInner() {
                                                 {inactiveOfferReason(offer)}
                                             </p>
                                         ) : currentUser?.userId !== offer.creatorId && <button
->>>>>>> origin/main
                                             disabled={!isVerified}
                                             onClick={() => {
                                                 if (!isVerified) {
@@ -548,7 +544,6 @@ function TradeDashboardInner() {
                 )}
             </div>
 
-<<<<<<< HEAD
             {compareIds.length > 0 && (
                 <section className="mt-6 overflow-x-auto rounded-xl border border-[#263949] bg-[#0D1D2C] p-4" aria-label="Offer comparison">
                     <h2 className="mb-3 text-sm font-bold text-white">Compare offers ({compareIds.length}/3)</h2>
@@ -565,13 +560,11 @@ function TradeDashboardInner() {
                     </table>
                 </section>
             )}
-=======
             <nav className="mt-6 flex items-center justify-center gap-4" aria-label="Marketplace pages">
                 <button type="button" onClick={() => setPage((current) => Math.max(0, current - 1))} disabled={page === 0 || isLoading} className="rounded-lg border border-[#263949] px-4 py-2 text-sm text-white disabled:opacity-40">Previous</button>
                 <span className="text-sm text-gray-400" aria-live="polite">Page {page + 1}</span>
                 <button type="button" onClick={() => setPage((current) => current + 1)} disabled={isLoading || offers.length < pageSize} className="rounded-lg border border-[#263949] px-4 py-2 text-sm text-white disabled:opacity-40">Next</button>
             </nav>
->>>>>>> origin/main
 
             {isOpen && (
                 <CreateOfferModal onClose={() => setIsOpen(false)} />
